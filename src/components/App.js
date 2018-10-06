@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Header from './Header';
 import '../App.css';
 
 class App extends Component {
@@ -54,17 +55,6 @@ class App extends Component {
     );
   }
 }
-
-const Header = (props) => {
-  return (
-    <header>
-      <h1>{props.title}</h1>
-      <span className="stats">
-        Players: {props.totalPlayers}
-      </span>
-    </header>
-  );
-};
 
 const Player = (props) => {
   return (
