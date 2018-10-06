@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Header from './Header';
+import Player from './Player';
 import '../App.css';
 
 class App extends Component {
@@ -55,24 +56,6 @@ class App extends Component {
     );
   }
 }
-
-const Player = (props) => {
-  return (
-    <div className="player">
-      <span className="player-name">
-        <button
-          className="remove-player"
-          onClick={() => props.removePlayer(props.id)}
-        >
-          ✖
-        </button>
-        {props.name}
-      </span>
-
-      <Counter />
-    </div>
-  );
-};
 
 class Counter extends Component {
   state = {
