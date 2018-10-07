@@ -8,19 +8,23 @@ class App extends Component {
     players: [
       {
         name: 'Guil',
-        id: 1
+        id: 1,
+        score: 0
       },
       {
         name: 'Treasure',
-        id: 2
+        id: 2,
+        score: 0
       },
       {
         name: 'Ashley',
-        id: 3
+        id: 3,
+        score: 0
       },
       {
         name: 'James',
-        id: 4
+        id: 4,
+        score: 0
       }
     ]
   };
@@ -49,6 +53,7 @@ class App extends Component {
             key={player.id.toString()}
             id={player.id}
             name={player.name}
+            score={player.score}
             removePlayer={this.handleRemovePlayer}
           />
         )}
