@@ -48,7 +48,7 @@ class App extends Component {
   };
 
   render() {
-    return(
+    return (
       <div className="scoreboard">
         <Header
           title="Scoreboard"
