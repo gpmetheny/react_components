@@ -6,7 +6,7 @@ const Stats = (props) => {
       <tbody>
         <tr>
           <td>Players:</td>
-          <td>0</td>
+          <td>{props.players.length}</td>
         </tr>
         <tr>
           <td>Total Points:</td>
