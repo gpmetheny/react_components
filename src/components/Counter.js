@@ -6,12 +6,12 @@ const Counter = (props) => {
     <div className="counter">
       <button
         className="counter-action decrement"
-        onClick={() => props.changeScore(-1)}
+        onClick={() => props.changeScore(props.index, -1)}
       > - </button>
       <span className="counter-score">{props.score}</span>
       <button
         className="counter-action increment"
-        onClick={() => props.changeScore(1)}
+        onClick={() => props.changeScore(props.index, 1)}
       > + </button>
     </div>
   );
