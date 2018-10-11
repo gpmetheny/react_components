@@ -5,6 +5,16 @@ class Stopwatch extends Component {
     isRunning: false
   };
 
+  componentDidMount() {
+    this.intervalID = setInterval(() => {
+      return this.tick();
+    }, 100);
+  }
+
+  tick = () => {
+    console.log('ticking...');
+  };
+
   handleStopwatch = () => {
     this.setState({
       isRunning: !this.state.isRunning
