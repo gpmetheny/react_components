@@ -16,16 +16,21 @@ class Stopwatch extends Component {
   tick = () => {
     if (this.state.isRunning) {
       const now = Date.now();
-      this.setState({
-        previousTime: now,
-        elapsedTime: this.state.elapsedTime + (now - this.state.previousTime)
+      this.setState((prevState) => {
+        return {
+          previousTime: now,
+          // should previousTime also be set using prevState?
+          elapsedTime: prevState.elapsedTime + (now - this.state.previousTime)
+        };
       });
     }
   };
 
   handleStopwatch = () => {
-    this.setState({
-      isRunning: !this.state.isRunning
+    this.setState((prevState) => {
+      return {
+        isRunning: !prevState.isRunning
+      };
     });
     // runs when start/stop is clicked
     // so isRunning will still be false when press "start"
