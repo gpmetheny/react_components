@@ -14,7 +14,13 @@ class Stopwatch extends Component {
   }
 
   tick = () => {
-    console.log('ticking...');
+    if (this.state.isRunning) {
+      const now = Date.now();
+      this.setState({
+        previousTime: now,
+        elapsedTime: this.state.elapsedTime + (now - this.state.previousTime)
+      });
+    }
   };
 
   handleStopwatch = () => {
