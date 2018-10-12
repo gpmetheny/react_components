@@ -45,7 +45,9 @@ class Stopwatch extends Component {
     return (
       <div className="stopwatch">
         <h2>Stopwatch</h2>
-        <span className="stopwatch-time">0</span>
+        <span className="stopwatch-time">
+          {Math.floor(this.state.elapsedTime / 1000)}
+        </span>
         <button onClick={this.handleStopwatch}>
           {this.state.isRunning ? 'Stop' : 'Start'}
         </button>
