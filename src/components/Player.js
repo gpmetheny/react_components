@@ -19,6 +19,7 @@ class Player extends PureComponent {
       index,
       name,
       score,
+      highScore,
       changeScore,
       removePlayer
     } = this.props;
@@ -34,7 +35,7 @@ class Player extends PureComponent {
           >
             ✖
           </button>
-          <Crown />
+          <Crown highScore={highScore} />
           {name}
         </span>
   
