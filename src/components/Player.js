@@ -5,7 +5,7 @@ import Counter from './Counter';
 
 class Player extends PureComponent {
   static propTypes = {
-    highScore: PropTypes.bool.isRequired,
+    isHighScore: PropTypes.bool.isRequired,
     changeScore: PropTypes.func.isRequired,
     removePlayer: PropTypes.func.isRequired,
     index: PropTypes.number.isRequired,
@@ -20,7 +20,7 @@ class Player extends PureComponent {
       index,
       name,
       score,
-      highScore,
+      isHighScore,
       changeScore,
       removePlayer
     } = this.props;
@@ -36,7 +36,7 @@ class Player extends PureComponent {
           >
             ✖
           </button>
-          <Crown highScore={highScore} />
+          <Crown isHighScore={isHighScore} />
           {name}
         </span>
   
