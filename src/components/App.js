@@ -41,14 +41,12 @@ class App extends Component {
   };
 
   getHighScore = () => {
-    const scores = this.state.players.map((player) => {
-      return player.score;
-    });
-    const highScore = Math.max(...scores);
-    if (highScore) {
+    return this.state.players.reduce((highScore, player) => {
+      if (player.score > highScore) {
+        return player.score;
+      }
       return highScore;
-    }
-    return null;
+    }, 1);
   };
 
   handleAddPlayer = (name) => {
