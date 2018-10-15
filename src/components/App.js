@@ -40,6 +40,17 @@ class App extends Component {
     });
   };
 
+  getHighScore = () => {
+    const scores = this.state.players.map((player) => {
+      return player.score;
+    });
+    const highScore = Math.max(...scores);
+    if (highScore) {
+      return highScore;
+    }
+    return null;
+  };
+
   handleAddPlayer = (name) => {
     this.setState((prevState) => {
       return {
