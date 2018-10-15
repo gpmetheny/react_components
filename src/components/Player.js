@@ -5,6 +5,7 @@ import Counter from './Counter';
 
 class Player extends PureComponent {
   static propTypes = {
+    highScore: PropTypes.bool.isRequired,
     changeScore: PropTypes.func.isRequired,
     removePlayer: PropTypes.func.isRequired,
     index: PropTypes.number.isRequired,
