@@ -89,6 +89,7 @@ class App extends Component {
             id={player.id}
             name={player.name}
             score={player.score}
+            highScore={this.getHighScore() === player.score}
             changeScore={this.handleScoreChange}
             removePlayer={this.handleRemovePlayer}
           />
