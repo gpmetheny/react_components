@@ -1,6 +1,11 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 
 class Crown extends Component {
+  static propTypes = {
+    highScore: PropTypes.bool.isRequired
+  };
+
   render() {
     const {highScore} = this.props;
 
