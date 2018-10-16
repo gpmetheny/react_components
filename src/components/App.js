@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Provider} from './Context';
 import Header from './Header';
 import PlayerList from './PlayerList';
 import AddPlayerForm from './AddPlayerForm';
@@ -76,18 +77,20 @@ class App extends Component {
 
   render() {
     return (
-      <div className="scoreboard">
-        <Header players={this.state.players} />
+      <Provider>
+        <div className="scoreboard">
+          <Header players={this.state.players} />
 
-        <PlayerList
-          players={this.state.players}
-          getHighScore={this.getHighScore}
-          changeScore={this.handleScoreChange}
-          removePlayer={this.handleRemovePlayer}
-        />
+          <PlayerList
+            players={this.state.players}
+            getHighScore={this.getHighScore}
+            changeScore={this.handleScoreChange}
+            removePlayer={this.handleRemovePlayer}
+          />
 
-        <AddPlayerForm addPlayer={this.handleAddPlayer} />
-      </div>
+          <AddPlayerForm addPlayer={this.handleAddPlayer} />
+        </div>
+      </Provider>
     );
   }
 }
