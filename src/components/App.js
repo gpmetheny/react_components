@@ -82,7 +82,6 @@ class App extends Component {
           <Header />
 
           <PlayerList
-            players={this.state.players}
             getHighScore={this.getHighScore}
             changeScore={this.handleScoreChange}
             removePlayer={this.handleRemovePlayer}
