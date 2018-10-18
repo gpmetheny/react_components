@@ -9,7 +9,7 @@ const PlayerList = ({getHighScore, changeScore, removePlayer}) => {
       {(context) => {
         return (
           <React.Fragment>
-            {context.map((player, index) =>
+            {context.players.map((player, index) =>
               <Player
                 {...player}
                 index={index}
