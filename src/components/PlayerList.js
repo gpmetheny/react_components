@@ -1,9 +1,8 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import {Consumer} from './Context';
 import Player from './Player';
 
-const PlayerList = ({getHighScore}) => {
+const PlayerList = () => {
   return (
     <Consumer>
       {(context) => {
@@ -14,7 +13,7 @@ const PlayerList = ({getHighScore}) => {
                 {...player}
                 index={index}
                 key={player.id.toString()}
-                isHighScore={getHighScore() === player.score}
+                isHighScore={context.actions.getHighScore() === player.score}
               />
             )}
           </React.Fragment>
@@ -22,10 +21,6 @@ const PlayerList = ({getHighScore}) => {
       }}
     </Consumer>
   );
-};
-
-PlayerList.propTypes = {
-  getHighScore: PropTypes.func.isRequired
 };
 
 export default PlayerList;
