@@ -7,47 +7,36 @@ import Counter from './Counter';
 class Player extends PureComponent {
   static propTypes = {
     isHighScore: PropTypes.bool.isRequired,
-    index: PropTypes.number.isRequired,
-    name: PropTypes.string.isRequired,
-    id: PropTypes.number.isRequired,
-    score: PropTypes.number.isRequired
+    index: PropTypes.number.isRequired
   };
 
   render() {
     const {
-      id,
       index,
-      name,
-      score,
       isHighScore
     } = this.props;
-
-    console.log(name + ' rendered');
 
     return (
       <div className="player">
       
         <Consumer>
-          {(context) => {
+          {({players, actions}) => {
             return (
               <span className="player-name">
                 <button
                   className="remove-player"
-                  onClick={() => context.actions.removePlayer(id)}
+                  onClick={() => actions.removePlayer(players[index].id)}
                 >
                   ✖
                 </button>
                 <Crown isHighScore={isHighScore} />
-                {name}
+                {players[index].name}
               </span>
             );
           }}
         </Consumer>
   
-        <Counter
-          index={index}
-          score={score}
-        />
+        <Counter index={index} />
       </div>
     );
   }
